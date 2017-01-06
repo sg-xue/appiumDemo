@@ -71,7 +71,7 @@ class WhiteListTime(unittest.TestCase):
         # return telNumList
         telNumList = []
         lineNum = 0
-        with open('whitelist-100w.txt', 'rw+') as wlist:
+        with open('whitelist-100w-6.txt', 'rw+') as wlist:
             content = wlist.readlines()
             while lineNum < len(content):
                 if (lineNum % 10000 == 0):
