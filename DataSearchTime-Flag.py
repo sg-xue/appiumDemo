@@ -18,13 +18,13 @@ driver = webdriver.Remote('http://0.0.0.0:4723/wd/hub', desired_caps)
 
 testDataList = []
 lineNum = 0
-with open('whitelist-60w-6.txt', 'rw+') as wlist:
+with open('flag-100w-6.txt', 'rw+') as wlist:
     content = wlist.readlines()
     while lineNum < len(content):
         if lineNum % 6000 == 0:
-            whiteList = re.search(r'.+?\s(.+)', content[lineNum]).group(1)
+            flagList = re.match(r'^(\d.+?)\s.+\s\w.*', content[lineNum]).group(1)
             # print "%s the content is: %s" % (lineNum, whiteList)
-            testDataList.append(whiteList.decode('utf-8'))
+            testDataList.append(flagList.decode('utf-8'))
         lineNum += 1
 
 driver.find_element_by_id("identify_single").click()

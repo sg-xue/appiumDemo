@@ -24,14 +24,6 @@ from time import sleep
 
 
 
-telNumList = []
-lineNum = 0
-with open('whitelist-100w.txt', 'rw+') as wlist:
-    content = wlist.readlines()
-    while lineNum < len(content) :
-        if (lineNum % 10000 == 0) :
-            whiteList = content[lineNum]
-            print "%s the content is: %s" % (lineNum, whiteList)
-            telNumList.append(whiteList)
-        lineNum += 1
-print telNumList
+s = '04765870005 疑似诈骗 123553'
+patten = re.compile(r'^(\d.+?)\s.+\s\w.*')
+print patten.match(s).group(1)
