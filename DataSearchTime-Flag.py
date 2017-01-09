@@ -10,7 +10,7 @@ from appium.webdriver.common.touch_action import TouchAction
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
 desired_caps['platformVersion'] = '4.4'
-desired_caps['deviceName'] = 'b3d555aa' #'69DDU16519013381'
+desired_caps['deviceName'] = '69DDU16519013381'
 desired_caps['appPackage'] = 'com.yulore.framework'
 desired_caps['appActivity'] = 'superyellowpage.yulore.com.frameworktest.FrameworkTestActivity'
 
@@ -18,10 +18,10 @@ driver = webdriver.Remote('http://0.0.0.0:4723/wd/hub', desired_caps)
 
 testDataList = []
 lineNum = 0
-with open('flag-100w-6.txt', 'rw+') as wlist:
+with open('flag-300w-6.txt', 'rw+') as wlist:
     content = wlist.readlines()
     while lineNum < len(content):
-        if lineNum % 6000 == 0:
+        if lineNum % 30000 == 0:
             flagList = re.match(r'^(\d.+?)\s.+\s\w.*', content[lineNum]).group(1)
             # print "%s the content is: %s" % (lineNum, whiteList)
             testDataList.append(flagList.decode('utf-8'))
